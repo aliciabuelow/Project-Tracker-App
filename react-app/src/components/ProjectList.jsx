@@ -1,7 +1,11 @@
-export default function ProjectList() {
+import ProjectCard from './ProjectCard';
+
+export default function ProjectList(props) {
     return (
-        <div>
-            Project List
-        </div>
+       <div>
+        {props.projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+        ))}
+       </div>
     )
 }

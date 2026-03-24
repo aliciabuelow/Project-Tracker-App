@@ -1,7 +1,11 @@
-export default function TaskList() {
+import TaskItem from './TaskItem';
+
+export default function TaskList(props) {
     return (
         <div>
-            TaskList
+            {props.tasks.map((task) => (
+                <TaskItem key={task.id} task={task} />
+            ))}
         </div>
     )
 }

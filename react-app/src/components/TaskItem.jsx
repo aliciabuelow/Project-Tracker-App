@@ -1,7 +1,8 @@
-export default function TaskItem() {
+
+export default function TaskItem(props) {
     return (
         <div>
-            TaskItem
+            {props.task.text}
         </div>
     )
 }

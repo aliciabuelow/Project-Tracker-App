@@ -1,7 +1,11 @@
-export default function ProjectCard() {
+import TaskList from './TaskList';
+
+export default function ProjectCard(props) {
     return (
         <div>
-            Project Card
+            <h2>{props.project.title}</h2>
+            <p>{props.project.description}</p>
+            <TaskList tasks={props.project.tasks} />
         </div>
-    )
+    );
 }
