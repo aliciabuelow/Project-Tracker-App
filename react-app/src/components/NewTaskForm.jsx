@@ -1,7 +1,8 @@
 export default function NewTaskForm() {
     return (
-        <div>
-            NewTaskForm
-        </div>
+        <form>
+            <input type="text" placeholder="New task" />
+            <button type="submit">Add Task</button>
+        </form>
     )
 }

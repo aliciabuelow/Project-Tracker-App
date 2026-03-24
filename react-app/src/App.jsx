@@ -24,10 +24,20 @@ export default function App() {
     },
   ]);
 
+  function addProject(title, description) {
+    const newProject = {
+      id: Date.now(),
+      title: title,
+      description: description,
+      tasks: [],
+    };
+    setProjects([...projects, newProject]);
+  }
+
   return (
     <div>
       <h1>Project Tracker</h1>
-      <NewProjectForm />
+      <NewProjectForm onAddProject={addProject} />
       <ProjectList projects={projects} />
     </div>
   )
