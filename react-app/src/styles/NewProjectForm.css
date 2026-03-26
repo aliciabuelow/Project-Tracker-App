@@ -1,0 +1,36 @@
+.new-project-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #FFF;
+    border-radius: 28px;
+    padding: 10px;
+    box-shadow: 0 10px 24px rgba(15, 23, 51, 0.06);
+    margin-bottom: 4px;
+}
+
+.new-project-form input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.new-project-form input::placeholder {
+  color: #8a90a3;
+}
+
+.new-project-form button {
+  border: none;
+  background: #4c63ff;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}

@@ -1,0 +1,34 @@
+.new-task-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f8fc;
+  border-radius: 999px;
+  padding: 6px;
+  margin-top: 18px;
+}
+
+.new-task-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 10px 14px;
+  min-width: 0;
+}
+
+.new-task-form input::placeholder {
+  color: #8a90a3;
+}
+
+.new-task-form button {
+  border: none;
+  background: #4c63ff;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}

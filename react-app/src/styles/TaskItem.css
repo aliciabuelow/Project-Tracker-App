@@ -1,0 +1,108 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eceef5;
+}
+
+.task-item:hover {
+  background: #F8F9FF;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.task-text {
+  font-size: 15px;
+  color: #0f1733;
+  transition: all 150ms ease;
+  cursor: default;
+}
+
+.task-status {
+  font-size: 13px;
+  color: #7b8397;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.task-completed .task-text {
+  text-decoration: line-through;
+  color: #98a0b3;
+}
+
+.task-completed .task-status {
+  color: #4c63ff;
+}
+
+.task-icon-btn {
+    border: none;
+    background: #F1F3F9;
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-icon-btn.delete svg {
+    color: #E5484D;
+}
+
+.task-icon-btn.delete:hover {
+  background: #FFECEC;
+}
+
+.task-icon-btn:hover {
+    background: #E7EBFF;
+}
+
+.task-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #c9d2ff;
+  border-radius: 6px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 150ms ease;
+}
+
+.task-checkbox.checked {
+  background: #4c63ff;
+  border-color: #4c63ff;
+}
+
+.task-checkbox.checked svg {
+  color: white;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

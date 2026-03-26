@@ -1,4 +1,5 @@
-import { useState } from 'react';``
+import { useState, useEffect } from 'react';
+import '../styles/NewProjectForm.css';
 
 export default function NewProjectForm(props) {
  const [title, setTitle] = useState('');
@@ -7,14 +8,38 @@ export default function NewProjectForm(props) {
  function handleSubmit(event) {
     event.preventDefault();
     
-    props.onAddProject(title, description);
+    if (props.editingProject) {
+        const updatedProject = {
+            ...props.editingProject,
+            title: title,
+            description: description,
+        };
+
+        props.onUpdateProject(updatedProject);
+    } else {
+        const newProject = {
+            id: Date.now(),
+            title: title,
+            description: description,
+            tasks: [],
+        };
+
+        props.onAddProject(newProject);
+    }
 
     setTitle('');
     setDescription('');
  }
 
+ useEffect(() => {
+    if (props.editingProject) {
+        setTitle(props.editingProject.title);
+        setDescription(props.editingProject.description);
+    }
+ }, [props.editingProject]);
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="new-project-form" onSubmit={handleSubmit}>
             <input 
                 type="text" 
                 placeholder="Project title" 

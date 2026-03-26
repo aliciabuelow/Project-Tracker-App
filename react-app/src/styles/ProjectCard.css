@@ -1,0 +1,53 @@
+.project-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 10px 24px rgba(15, 23, 51, 0.06);
+  margin-bottom: 24px;
+}
+
+.project-card-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #0f1733;
+}
+
+.project-card-description {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #6f7890;
+}
+
+.project-progress {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4c63ff;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project-actions button {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.edit-btn {
+  color: #4c63ff;
+}
+
+.delete-btn {
+  color: #e5484d;
+}
