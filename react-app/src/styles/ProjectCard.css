@@ -51,3 +51,25 @@
 .delete-btn {
   color: #e5484d;
 }
+
+.task-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  border: none;
+  background: #f1f3f9;
+  color: #6f7890;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #4c63ff;
+  color: white;
+}

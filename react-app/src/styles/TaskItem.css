@@ -106,3 +106,16 @@
   align-items: center;
   gap: 12px;
 }
+
+.task-edit-input {
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #D6DAF5;
+  outline: none;
+  width: 100%
+}
+
+.task-edit-input:focus {
+  border-color: #4C63FF;
+}

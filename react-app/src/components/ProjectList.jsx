@@ -21,6 +21,7 @@ export default function ProjectList(props) {
             onDeleteTask={props.onDeleteTask}
             onDeleteProject={props.onDeleteProject}
             onEditProject={props.onEditProject}
+            onEditTask={props.onEditTask}
             />
         ))}
        </div>

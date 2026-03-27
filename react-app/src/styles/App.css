@@ -70,7 +70,8 @@ body {
     width: 270px;
     height: 6px;
     border-bottom: 4px dashed #C9D2FF;
-    margin-left: 185px;
+    margin-left: 130px;
+    margin-top: 8px;
 }
 
 .new-project-wrapper {

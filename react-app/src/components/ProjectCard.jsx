@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import TaskList from './TaskList';
 import NewTaskForm from './NewTaskForm';
 import '../styles/ProjectCard.css';
@@ -5,6 +6,20 @@ import '../styles/ProjectCard.css';
 export default function ProjectCard(props) {
     const totalTasks = props.project.tasks.length;
     const completedTasks = props.project.tasks.filter((task) => task.completed).length;
+    const [filter, setFilter] = useState('all');
+
+    const filteredTasks = props.project.tasks.filter((task) => {
+        if (filter === 'active') {
+            return !task.completed;
+        }
+        
+        if (filter === 'completed') {
+            return task.completed;
+        }
+        
+        return true;
+    })
+
 
     return (
         <div className="project-card">
@@ -15,11 +30,38 @@ export default function ProjectCard(props) {
                 {completedTasks} / {totalTasks} tasks completed
             </p>
 
+            <div className="task-filters">
+                <button
+                    type="button"
+                    className={filter === 'all' ? 'filter-btn active' : 'filter-btn'}
+                    onClick={() => setFilter('all')}
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    className={filter === 'active' ? 'filter-btn active' : 'filter-btn'}
+                    onClick={() => setFilter('active')}
+                >
+                    Active
+                </button>
+
+                <button
+                    type="button"
+                    className={filter === 'completed' ? 'filter-btn active' : 'filter-btn'}
+                    onClick={() => setFilter('completed')}
+                >
+                    Completed
+                </button>
+            </div>
+
             <TaskList 
-            tasks={props.project.tasks} 
+            tasks={filteredTasks} 
             projectId={props.project.id}
             onToggleTaskCompleted={props.onToggleTaskCompleted}
             onDeleteTask={props.onDeleteTask}
+            onEditTask={props.onEditTask}
             />
             <NewTaskForm 
             tasks={props.project.tasks} 

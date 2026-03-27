@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import { Check, Trash2 } from 'lucide-react';
 import '../styles/TaskItem.css';
 
 export default function TaskItem(props) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedText, setEditedText] = useState(props.task.text);
+
+  function handleSave() {
+    props.onEditTask(props.projectId, props.task.id, editedText);
+    setIsEditing(false);
+  }
+
     function handleToggleClick() {
         props.onToggleTaskCompleted(props.projectId, props.task.id);
     }
@@ -22,7 +31,23 @@ export default function TaskItem(props) {
       </button>
 
       <div className="task-content">
+        
+      {isEditing ? (
+        <input
+          className="task-edit-input"
+          value={editedText}
+          onChange={(event) => setEditedText(event.target.value)}
+          autoFocus
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              handleSave();
+            }
+          }}
+        />
+      ) : (
         <span className="task-text">{props.task.text}</span>
+      )}
+
         <span className="task-status">
           {props.task.completed ? 'Completed' : 'Not completed'}
         </span>
@@ -30,6 +55,31 @@ export default function TaskItem(props) {
     </div>
 
     <div className="task-actions">
+
+      {isEditing ? (
+        <>
+        <button className="task-icon-btn" onClick={handleSave}>
+          Save
+        </button>
+        <button
+        className="task-icon-btn"
+        onClick={() => {
+          setIsEditing(false);
+          setEditedText(props.task.text);
+        }}
+        >
+          Cancel
+        </button>
+        </>
+      ) : (
+      <button
+        className="task-icon-btn"
+        onClick={() => setIsEditing(true)}
+      >
+        ✏️
+      </button>
+      )}
+
       <button className="task-icon-btn delete" onClick={handleDeleteClick}>
         <Trash2 size={16} />
       </button>

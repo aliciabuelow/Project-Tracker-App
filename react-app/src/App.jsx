@@ -117,6 +117,32 @@ function deleteTask(projectId, taskId) {
         setProjects(updatedProjects);
       }
 
+function editTask(projectId, taskId, newText) {
+  const updatedProjects = projects.map((project) => {
+    if (project.id === projectId) {
+      const updatedTasks = project.tasks.map((task) => {
+        if (task.id === taskId) {
+          return {
+            ...task,
+            text: newText,
+          };
+        }
+
+        return task;
+      });
+
+      return {
+        ...project,
+        tasks: updatedTasks,
+      };
+    }
+
+    return project;
+  });
+
+  setProjects(updatedProjects);
+}
+
 function deleteProject(projectId) {
   setProjects((prevProjects) =>
     prevProjects.filter((project) => project.id !== projectId)
@@ -191,6 +217,7 @@ function handleUpdateProject(updatedProject) {
       onDeleteTask={deleteTask}
       onDeleteProject={deleteProject}
       onEditProject={handleEditProject}
+      onEditTask={editTask}
       />
     </div>
   );

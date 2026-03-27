@@ -10,6 +10,7 @@ export default function TaskList(props) {
                 projectId={props.projectId}
                 onToggleTaskCompleted={props.onToggleTaskCompleted}
                 onDeleteTask={props.onDeleteTask}
+                onEditTask={props.onEditTask}
                 />
             ))}
         </div>
