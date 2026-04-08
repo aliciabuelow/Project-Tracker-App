@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, Trash2 } from 'lucide-react';
+import { Check, Pencil, Trash2 } from 'lucide-react';
 import '../styles/TaskItem.css';
 
 export default function TaskItem(props) {
@@ -76,7 +76,7 @@ export default function TaskItem(props) {
         className="task-icon-btn"
         onClick={() => setIsEditing(true)}
       >
-        ✏️
+        <Pencil size={16} />
       </button>
       )}
 
