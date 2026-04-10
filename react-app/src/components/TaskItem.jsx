@@ -5,7 +5,6 @@ import '../styles/TaskItem.css';
 export default function TaskItem(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(props.task.text);
-  console.log(props);
 
   function handleSave() {
     props.onEditTask(props.projectId, props.task.id, editedText);
