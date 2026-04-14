@@ -6,16 +6,16 @@ export default function TaskItem(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(props.task.text);
 
-  function handleSave() {
+  const handleSave = () => {
     props.onEditTask(props.projectId, props.task.id, editedText);
     setIsEditing(false);
   }
 
-    function handleToggleClick() {
+  const handleToggleClick = () => {
         props.onToggleTaskCompleted(props.projectId, props.task.id);
     }
 
-    function handleDeleteClick() {
+  const handleDeleteClick = () => {
         props.onDeleteTask(props.projectId, props.task.id);
     }
 

@@ -4,7 +4,7 @@ import '../styles/NewTaskForm.css'
 export default function NewTaskForm(props) {
     const [taskText, setTaskText] = useState('');
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         props.onAddTask(props.projectId, taskText);

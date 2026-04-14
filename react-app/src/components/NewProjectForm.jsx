@@ -5,7 +5,7 @@ export default function NewProjectForm(props) {
  const [title, setTitle] = useState('');
  const [description, setDescription] = useState('');
 
- function handleSubmit(event) {
+ const handleSubmit = (event) => {
     event.preventDefault();
     
     if (props.editingProject) {

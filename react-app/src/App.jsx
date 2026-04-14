@@ -51,11 +51,11 @@ export default function App() {
     localStorage.setItem('userName', userName);
   }, [userName]);
 
-  function addProject(newProject) {
+  const addProject = (newProject) => {
     setProjects((prevProjects) => [...prevProjects, newProject]);
   }
 
-  function addTask(projectId, taskText) {
+  const addTask = (projectId, taskText) => {
     const updatedProjects = projects.map((project) => {
       if (project.id === projectId) {
         const newTask = {
@@ -76,7 +76,7 @@ export default function App() {
       setProjects(updatedProjects);
       }
 
-function toggleTaskCompleted(projectId, taskId) {
+const toggleTaskCompleted = (projectId, taskId) => {
   const updatedProjects = projects.map((project) => {
     if (project.id === projectId) {
       const updatedTasks = project.tasks.map((task) => {
@@ -101,7 +101,7 @@ function toggleTaskCompleted(projectId, taskId) {
   setProjects(updatedProjects);
   }
 
-function deleteTask(projectId, taskId) {
+const deleteTask = (projectId, taskId) => {
       const updatedProjects = projects.map((project) => {
         if (project.id === projectId) {
           const filteredTasks = project.tasks.filter((task) => {
@@ -117,7 +117,7 @@ function deleteTask(projectId, taskId) {
         setProjects(updatedProjects);
       }
 
-function editTask(projectId, taskId, newText) {
+const editTask = (projectId, taskId, newText) => {
   const updatedProjects = projects.map((project) => {
     if (project.id === projectId) {
       const updatedTasks = project.tasks.map((task) => {
@@ -143,17 +143,17 @@ function editTask(projectId, taskId, newText) {
   setProjects(updatedProjects);
 }
 
-function deleteProject(projectId) {
+const deleteProject = (projectId) => {
   setProjects((prevProjects) =>
     prevProjects.filter((project) => project.id !== projectId)
   );
 }
 
-function handleEditProject(project) {
+const handleEditProject = (project) => {
   setEditingProject(project);
 }
 
-function handleUpdateProject(updatedProject) {
+const handleUpdateProject = (updatedProject) => {
   setProjects((prevProjects) =>
     prevProjects.map((project) =>
       project.id === updatedProject.id ? updatedProject : project
