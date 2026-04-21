@@ -42,13 +42,13 @@ export default function NewProjectForm(props) {
         <form className="new-project-form" onSubmit={handleSubmit}>
             <input 
                 type="text" 
-                placeholder="Project title" 
+                placeholder="Title" 
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
             />
             <input 
                 type="text" 
-                placeholder="Project description" 
+                placeholder="Description" 
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
             />
