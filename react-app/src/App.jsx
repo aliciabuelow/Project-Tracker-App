@@ -199,7 +199,6 @@ const handleUpdateProject = (updatedProject) => {
         )}
       </h1>
 
-      <div className="hero-line"></div>
     </header>
       
       <div className="new-project-wrapper">

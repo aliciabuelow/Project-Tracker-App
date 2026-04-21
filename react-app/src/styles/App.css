@@ -66,14 +66,6 @@ body {
     cursor: pointer;
 }
 
-.hero-line {
-    width: 270px;
-    height: 6px;
-    border-bottom: 4px dashed #C9D2FF;
-    margin-left: 130px;
-    margin-top: 8px;
-}
-
 .new-project-wrapper {
     margin-bottom: 40px;
 }
